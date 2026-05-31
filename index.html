@@ -94,7 +94,7 @@
         .terminal-box p {
             color: #a5a19e;
             font-size: 0.95rem;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
             font-weight: 400;
         }
 
@@ -104,7 +104,13 @@
             font-size: 1.05rem;
             font-weight: bold;
             word-break: break-all;
-            user-select: all; /* Kullanıcı tek tıkla tüm kodu seçebilsin diye */
+            line-height: 1.5;
+        }
+
+        .terminal-divider {
+            height: 1px;
+            background-color: #3a3a44;
+            margin: 15px 0;
         }
 
         /* Aksiyon Butonları Alanı */
@@ -202,11 +208,19 @@
 
         <!-- Terminal Yükleme Talimatı Kutusu -->
         <div class="terminal-box">
-            <p>Dear user, please enter these polite commands into your terminal to begin the installation:</p>
+            <p>Dear user, please prepare your disk and run the installation script with these commands:</p>
+            
+            <!-- fdisk Komutları -->
+            <div class="code-line" style="color: #e6b800;">fdisk /dev/sda &lt;&lt;EOF<br>o<br>w<br>EOF</div>
+            
+            <!-- Bölücü Çizgi -->
+            <div class="terminal-divider"></div>
+            
+            <!-- Kurulum Komutu -->
             <div class="code-line">pacman -Sy dos2unix && dos2unix kur.sh && ./kur.sh</div>
         </div>
 
-        <!-- Aksiyon Butonları (İndirme Linki Dahil Edildi) -->
+        <!-- Aksiyon Butonları -->
         <div class="cta-group">
             <a href="https://github.com/akifeymen271-cloud/AkifOS/releases/download/V1.0/AkifOS.iso" class="btn-download">DOWNLOAD ISO</a>
             <a href="https://github.com/akifeymen271-cloud/AkifOS" target="_blank" class="btn-source">VIEW SOURCE</a>
