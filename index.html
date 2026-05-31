@@ -1,136 +1,220 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
-    <meta name="google-site-verification" content="Y3wal807d46sDN-2epMEWKCzP5fA1mTSrA6pH-29IS8" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AkifOS | Seçkin Bir Deneyim</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+    <title>AkifOS | Elegance and Serenity</title>
+    <!-- Google Fonts üzerinden asil ve modern yazı tiplerini çekiyoruz -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
+    
     <style>
-        :root {
-            --sir-gold: #c5a059;
-            --noble-black: #1a1a1a;
-            --ivory-white: #fcfaf7;
+        /* Genel Sayfa Ayarları */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-            background-color: var(--ivory-white);
-            color: var(--noble-black);
-            font-family: 'Lora', serif;
-            margin: 0;
-            line-height: 1.6;
-        }
-
-        .hero {
-            height: 100vh;
+            background-color: #faf8f5; /* Gözü yormayan asil fildişi tonu */
+            color: #2c2a29; /* Koyu antrasit yazı rengi */
+            font-family: 'Space Grotesk', sans-serif;
             display: flex;
             flex-direction: column;
+            min-height: 100vh;
             justify-content: center;
             align-items: center;
+            padding: 20px;
+        }
+
+        /* Ana Konteyner */
+        .container {
+            max-width: 800px;
+            width: 100%;
             text-align: center;
+            animation: fadeIn 1.2s ease-in-out;
+        }
+
+        /* Logo Alanı */
+        .logo-box {
+            border: 1px solid #d4af37; /* Altın sarısı asil çerçeve */
+            padding: 40px 60px;
+            margin-bottom: 40px;
+            background-color: #ffffff;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.05);
+            display: inline-block;
+        }
+
+        .logo-title {
+            font-family: 'Cinzel', serif;
+            font-size: 3.5rem;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            font-weight: 400;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+
+        .logo-subtitle {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            letter-spacing: 4px;
+            font-style: italic;
+            color: #b59410; /* Soft altın rengi */
+        }
+
+        /* Açıklama Metni */
+        .description {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            font-weight: 300;
+            color: #555251;
+            margin-bottom: 40px;
             padding: 0 20px;
         }
 
-        .logo-box {
-            border: 1px solid var(--sir-gold);
-            padding: 40px 80px;
-            margin-bottom: 30px;
-            position: relative;
+        .description span {
+            display: block;
+            margin-bottom: 10px;
         }
 
-        h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            font-weight: 400;
-            margin: 0;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-        }
-
-        .motto {
-            font-style: italic;
-            color: var(--sir-gold);
-            font-size: 1.2rem;
-            margin-top: 10px;
-            letter-spacing: 2px;
-        }
-
-        .description {
-            max-width: 600px;
-            font-size: 1.1rem;
-            margin: 30px 0;
-            color: #555;
-        }
-
-        .divider {
-            width: 50px;
-            height: 1px;
-            background-color: var(--sir-gold);
-            margin: 20px auto;
-        }
-
-        .instruction-box {
-            font-family: 'Lora', serif;
-            font-size: 0.9rem;
-            background: #f4f1ed;
-            padding: 20px;
+        /* Terminal Komut Kutusu */
+        .terminal-box {
+            background-color: #1e1e24; /* Siber koyu arka plan */
+            border-left: 4px solid #d4af37;
+            padding: 25px;
+            text-align: left;
+            margin-bottom: 45px;
             border-radius: 4px;
-            margin-bottom: 40px;
-            border-left: 3px solid var(--sir-gold);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
         }
 
-        .btn-elegant {
-            display: inline-block;
-            padding: 15px 50px;
-            border: 1px solid var(--noble-black);
-            background: transparent;
-            color: var(--noble-black);
-            text-decoration: none;
-            font-family: 'Playfair Display', serif;
-            font-size: 1.1rem;
+        .terminal-box p {
+            color: #a5a19e;
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+            font-weight: 400;
+        }
+
+        .code-line {
+            font-family: 'Courier New', Courier, monospace;
+            color: #39ff14; /* Siber yeşil komut rengi */
+            font-size: 1.05rem;
+            font-weight: bold;
+            word-break: break-all;
+            user-select: all; /* Kullanıcı tek tıkla tüm kodu seçebilsin diye */
+        }
+
+        /* Aksiyon Butonları Alanı */
+        .cta-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+        }
+
+        /* Ana İndirme Butonu */
+        .btn-download {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            border: 1px solid #1a1a1a;
+            padding: 15px 35px;
+            font-size: 1rem;
             letter-spacing: 2px;
-            transition: all 0.5s ease;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
-        .btn-elegant:hover {
-            background-color: var(--noble-black);
-            color: var(--ivory-white);
-            padding: 15px 70px;
+        .btn-download:hover {
+            background-color: #d4af37;
+            border-color: #d4af37;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
         }
 
+        /* Kaynak Kod Butonu */
+        .btn-source {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: transparent;
+            color: #1a1a1a;
+            border: 1px solid #1a1a1a;
+            padding: 15px 35px;
+            font-size: 1rem;
+            letter-spacing: 2px;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-source:hover {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            transform: translateY(-3px);
+        }
+
+        /* Alt Bilgi (Footer) */
         footer {
-            position: absolute;
-            bottom: 30px;
-            font-size: 0.8rem;
+            margin-top: auto;
+            font-size: 0.85rem;
+            color: #8c8885;
             letter-spacing: 1px;
-            color: #999;
+            padding-top: 20px;
+        }
+
+        /* Giriş Animasyonu */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Mobil Uyum Ayarı */
+        @media (max-width: 600px) {
+            .logo-box { padding: 25px 30px; }
+            .logo-title { font-size: 2.5rem; }
+            .cta-group { flex-direction: column; width: 100%; }
+            .btn-download, .btn-source { width: 100%; }
         }
     </style>
 </head>
 <body>
 
-    <div class="hero">
+    <div class="container">
+        <!-- Logo Bölümü -->
         <div class="logo-box">
-            <h1>AkifOS</h1>
-            <div class="motto">Zarafet ve Sükûnet</div>
+            <h1 class="logo-title">AkifOS</h1>
+            <div class="logo-subtitle">Elegance and Serenity</div>
         </div>
 
+        <!-- Açıklama Bölümü -->
         <div class="description">
-            Sıradanlığın ötesinde, her bir satırı özenle işlenmiş bir dijital tecrübe. 
-            Karmaşadan uzak, asil bir duruş için tasarlandı.
+            <span>Beyond the ordinary, a digital experience meticulously crafted in every line of code.</span>
+            <span>Designed for a noble stance, completely free from clutter.</span>
         </div>
 
-        <div class="divider"></div>
-
-        <div class="instruction-box">
-            Kıymetli kullanıcımız, kuruluma başlamak için lütfen terminalinize şu nazik komutları giriniz:<br>
-            <strong>pacman -Sy dos2unix && dos2unix kur.sh && ./kur.sh</strong>
+        <!-- Terminal Yükleme Talimatı Kutusu -->
+        <div class="terminal-box">
+            <p>Dear user, please enter these polite commands into your terminal to begin the installation:</p>
+            <div class="code-line">pacman -Sy dos2unix && dos2unix kur.sh && ./kur.sh</div>
         </div>
 
-        <a href="https://github.com/akifeymen271-cloud/AkifOS/releases/download/V1.0/AkifOS.iso" class="btn-elegant">SİSTEMİ TAKDİM ALIN</a>
+        <!-- Aksiyon Butonları (İndirme Linki Dahil Edildi) -->
+        <div class="cta-group">
+            <a href="https://github.com/akifeymen271-cloud/AkifOS/releases/download/V1.0/AkifOS.iso" class="btn-download">DOWNLOAD ISO</a>
+            <a href="https://github.com/akifeymen271-cloud/AkifOS" target="_blank" class="btn-source">VIEW SOURCE</a>
+        </div>
 
+        <!-- İmza Kısmı -->
         <footer>
-            Müellif: Akif Eymen | Konya, 2026
+            Author: Akif Eymen | Konya, 2026
         </footer>
     </div>
 
